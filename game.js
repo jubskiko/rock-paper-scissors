@@ -66,13 +66,30 @@ function game () {
         let rest = temp.substring(1);
         playerChoice = firstLetter + rest;
         result = play(playerChoice, pcChoice);
-        console.log(result);
+        alert(result);
+        alert("You have " + playerScore + " points and the computer has " + pcScore + " points.");
     }
     if (playerScore > pcScore) {
-        console.log("You Win!!!");
+        alert("You Win!!!");
     } else {
-        console.log("You Lose...");
+        alert("You Lose...");
     }
 }
 
-let game1 = new game();
+function loopGame () {
+    let wantsToPlay = false;
+    let choice = prompt("Would you like to play a game of rock, paper, scissors? Enter Yes if you would like to and no if you don't want too").toLowerCase();
+    if (choice == "yes") {
+        wantsToPlay = true;
+    }
+    while (wantsToPlay) {
+        game();
+        choice = prompt("Would you like to restart? Enter Yes if you would like to, and no if you don't want too").toLowerCase();
+        if (choice == "no") {
+            wantsToPlay = false;
+        }
+
+    }
+}
+
+loopGame();
