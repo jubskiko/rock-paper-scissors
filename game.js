@@ -59,7 +59,7 @@ function game () {
     playerScore = 0;
     pcScore = 0;
     let result = "";
-    while(playerScore < 5 || pcScore < 5) {
+    while(playerScore < 5 && pcScore < 5) {
         pcChoice = getPCChoice();
         let temp = prompt("Rock, Paper, or Scissors?");
         let firstLetter = temp.charAt(0).toUpperCase();
